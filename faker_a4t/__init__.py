@@ -2,5 +2,5 @@ from faker.providers import BaseProvider
 
 
 class A4tProvider(BaseProvider):
-    def hello():
+    def hello(self):
         return 'world!!'

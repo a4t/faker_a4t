@@ -1,8 +1,12 @@
 import unittest
-import faker_a4t
+from faker_a4t import A4tProvider
+from faker import Faker
 
 
 class TestCore(unittest.TestCase):
+    def setUp(self):
+        self.fake = Faker()
+        self.fake.add_provider(A4tProvider)
+
     def test_hello(self):
-        a4t = faker_a4t.A4tProvider
-        self.assertEquals(a4t.hello(), 'world!!')
+        self.assertEquals(self.fake.hello(), 'world!!')
